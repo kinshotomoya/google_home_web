@@ -1,0 +1,15 @@
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+/Users/jinzhengpengye/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20190125-31554-1uj2g4b.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190125-31554-1wumffi/bootsnap

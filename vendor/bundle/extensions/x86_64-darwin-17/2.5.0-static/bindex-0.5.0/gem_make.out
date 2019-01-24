@@ -1,0 +1,15 @@
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/Users/jinzhengpengye/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20190125-31554-ztwgdt.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/jinzhengpengye/work_space/google_home_web/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190125-31554-kypt62/bindex
