@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_163313) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "line_id", null: false
+    t.string "line_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
