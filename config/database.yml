@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: google_home_web_production
-  username: google_home_web
+  username: kinkin
   password: <%= ENV['GOOGLE_HOME_WEB_DATABASE_PASSWORD'] %>
