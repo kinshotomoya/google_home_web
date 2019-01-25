@@ -53,4 +53,5 @@ production:
   username: <%= ENV['USER_NAME'] %>
   password: <%= ENV['GOOGLE_HOME_WEB_DATABASE_PASSWORD'] %>
   host: <%= ENV['HOST'] %>
+  socket: /var/lib/mysql/mysql.sock
   port: 3306
