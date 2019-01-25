@@ -53,3 +53,4 @@ production:
   username: <%= ENV['USER_NAME'] %>
   password: <%= ENV['GOOGLE_HOME_WEB_DATABASE_PASSWORD'] %>
   host: <%= ENV['HOST'] %>
+  port: 3306
