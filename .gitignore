@@ -27,4 +27,4 @@
 /config/master.key
 
 ## Ignore ruby gem
-vendor/bundle
+./vendor/bundle
