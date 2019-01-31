@@ -28,3 +28,6 @@
 
 ## Ignore ruby gem
 ./vendor/bundle
+
+# Ignore environment valiables
+.env
