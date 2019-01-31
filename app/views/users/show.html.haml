@@ -1,0 +1,25 @@
+.row
+  .col-lg-12
+    %h1.page-header
+      %span.name_span
+        = @user.name
+        の会話
+-if @messages.present?
+  .row
+    .col-lg-12
+      .panel.panel-default
+        .panel-body
+          %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+            %thead
+              %tr
+              %th 会話内容
+              %th 日付
+            %tbody
+              -@messages.each do |message|
+                %tr.value_row
+                %td.table_value
+                  =message.text
+                %td.table_value.date_value
+                  =message.created_at
+- else
+  = image_tag '/no_image.JPG', alt: 'image', height: '100%', width: '100%', class: ''

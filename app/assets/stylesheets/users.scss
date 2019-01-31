@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table_value, .page-header {
+  text-align: center;
+}
+
+th, tr {
+  font-size: 30px;
+}
+
+.value_row {
+  margin-top: 10px;
+}
+
+.name_span {
+  background: linear-gradient(transparent 50%, orange 50%);
+}
+
+.date_value {
+  font-size: 20px;
+}
+
+.user_name_link {
+  text-decoration: none;
+  color: orange;
+}
