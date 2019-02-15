@@ -1,8 +1,14 @@
 // ここにtalkのviewを置く
 <template>
-  <div>
-    {{ messageData.text }}
+  <div id='message_content'>
+    <div>
+      {{ messageData.text }}
+    </div>
+    <div>
+    {{ messageData.user_name }}
+    </div>
   </div>
+  
 </template>
 
 <script>

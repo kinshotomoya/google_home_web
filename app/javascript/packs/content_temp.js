@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     watch: {
       searchQuery: function () {
         console.log(this.searchQuery)
-        // TODO: 
+        // TODO: インクリメンタサーチの実装
+        
       }
     }
   })
