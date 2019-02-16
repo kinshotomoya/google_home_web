@@ -1,0 +1,24 @@
+<%# -# .row
+-#   .col-lg-12
+-#     %h1.page-header メンバー一覧
+-# .row
+-#   .col-lg-12
+-#     .panel.panel-default
+-#       .panel-body
+-#         %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+-#           %thead
+-#             %tr
+-#               %th ID
+-#               %th 名前
+-#           %tbody
+-#             -@users.each do |user|
+-#               %tr.value_row
+-#                 %td.table_value
+-#                   =user.id
+-#                 %td.table_value
+-#                   =link_to user_path(user.id), class: "user_name_link" do
+-#                     =user.name
+-#                 -# %td.center
+-#                 -#   =link_to admin_aduser_path(aduser.id), class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
+-#                 -#     詳細
+ %>
