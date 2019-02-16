@@ -1,18 +1,24 @@
 <template>
-  <div>
-    <div>
-      <v-toolbar
-        color="pink"
-        dark
+  <div id='header'>
+    <v-toolbar
+      fixed
+      height="130px"
+      dark
+      color="blue darken-4"
+      class='header_tool_bar'
+    >
+      <v-icon
+        size='40px'
+      >fas fa-list</v-icon>
+      <v-toolbar-title class='toolbar-title'>みんなの会話</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-text-field
+        placeholder="名前で検索"
+        v-model='searchQuery'
+        class='text-field'
       >
-        <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title>My Music</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-          <input name='query' v-model='searchQuery' placeholder='Search talks by name'>
-        </v-btn>
-      </v-toolbar>
-    </div>
+      </v-text-field>
+    </v-toolbar>
   </div>
 </template>
 
@@ -44,3 +50,17 @@ export default {
   }
 }
 </script>>
+
+<style lang="css" scoped>
+  .header_tool_bar {
+  }
+
+  .v-toolbar__content {
+  }
+  .toolbar-title {
+    font-size: 30px;
+  }
+  .text-field {
+    font-size: 25px;
+  }
+</style>

@@ -1,35 +1,35 @@
 {
-  "application.js": "/packs/js/application-d6b0990f729646796c86.js",
-  "application.js.map": "/packs/js/application-d6b0990f729646796c86.js.map",
-  "components/content.js": "/packs/js/components/content-a1bcb363c947c47f5dd1.js",
-  "components/content.js.map": "/packs/js/components/content-a1bcb363c947c47f5dd1.js.map",
-  "components/header_temp.js": "/packs/js/components/header_temp-917b8414dfda4fe35e6f.js",
-  "components/header_temp.js.map": "/packs/js/components/header_temp-917b8414dfda4fe35e6f.js.map",
+  "application.js": "/packs/js/application-eabdf73e94cee295c877.js",
+  "application.js.map": "/packs/js/application-eabdf73e94cee295c877.js.map",
+  "components/content.js": "/packs/js/components/content-2a313c564fdc8eb0fc55.js",
+  "components/content.js.map": "/packs/js/components/content-2a313c564fdc8eb0fc55.js.map",
+  "components/header_temp.js": "/packs/js/components/header_temp-dbb5d97854aaa7782bd2.js",
+  "components/header_temp.js.map": "/packs/js/components/header_temp-dbb5d97854aaa7782bd2.js.map",
   "content_temp.js": "/packs/js/content_temp-bce366b54efef7c9674e.js",
   "content_temp.js.map": "/packs/js/content_temp-bce366b54efef7c9674e.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-d6b0990f729646796c86.js"
+        "/packs/js/application-eabdf73e94cee295c877.js"
       ],
       "js.map": [
-        "/packs/js/application-d6b0990f729646796c86.js.map"
+        "/packs/js/application-eabdf73e94cee295c877.js.map"
       ]
     },
     "components/content": {
       "js": [
-        "/packs/js/components/content-a1bcb363c947c47f5dd1.js"
+        "/packs/js/components/content-2a313c564fdc8eb0fc55.js"
       ],
       "js.map": [
-        "/packs/js/components/content-a1bcb363c947c47f5dd1.js.map"
+        "/packs/js/components/content-2a313c564fdc8eb0fc55.js.map"
       ]
     },
     "components/header_temp": {
       "js": [
-        "/packs/js/components/header_temp-917b8414dfda4fe35e6f.js"
+        "/packs/js/components/header_temp-dbb5d97854aaa7782bd2.js"
       ],
       "js.map": [
-        "/packs/js/components/header_temp-917b8414dfda4fe35e6f.js.map"
+        "/packs/js/components/header_temp-dbb5d97854aaa7782bd2.js.map"
       ]
     },
     "content_temp": {
@@ -59,6 +59,21 @@
   },
   "header_temp.js": "/packs/js/header_temp-54cd4066dcba1aad7b31.js",
   "header_temp.js.map": "/packs/js/header_temp-54cd4066dcba1aad7b31.js.map",
+  "media/fa-brands-400.eot": "/packs/media/fa-brands-400-d9d17590.eot",
+  "media/fa-brands-400.svg": "/packs/media/fa-brands-400-80533988.svg",
+  "media/fa-brands-400.ttf": "/packs/media/fa-brands-400-c39278f7.ttf",
+  "media/fa-brands-400.woff": "/packs/media/fa-brands-400-b90365bc.woff",
+  "media/fa-brands-400.woff2": "/packs/media/fa-brands-400-4b115e11.woff2",
+  "media/fa-regular-400.eot": "/packs/media/fa-regular-400-414ff5da.eot",
+  "media/fa-regular-400.svg": "/packs/media/fa-regular-400-e7e957c8.svg",
+  "media/fa-regular-400.ttf": "/packs/media/fa-regular-400-f6c6f6c8.ttf",
+  "media/fa-regular-400.woff": "/packs/media/fa-regular-400-5dd3976c.woff",
+  "media/fa-regular-400.woff2": "/packs/media/fa-regular-400-65779ebc.woff2",
+  "media/fa-solid-900.eot": "/packs/media/fa-solid-900-b5596f4d.eot",
+  "media/fa-solid-900.svg": "/packs/media/fa-solid-900-82905d8d.svg",
+  "media/fa-solid-900.ttf": "/packs/media/fa-solid-900-b70cea03.ttf",
+  "media/fa-solid-900.woff": "/packs/media/fa-solid-900-61969d43.woff",
+  "media/fa-solid-900.woff2": "/packs/media/fa-solid-900-46280631.woff2",
   "store.js": "/packs/js/store-f929381c47e39ad5ea22.js",
   "store.js.map": "/packs/js/store-f929381c47e39ad5ea22.js.map"
 }

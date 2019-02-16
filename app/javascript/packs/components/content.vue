@@ -1,7 +1,8 @@
 <template>
   <div id='content'>
     <v-hover>
-      <v-card>
+      <v-card
+      >
         <v-container
           fluid
           grid-list-lg
@@ -16,16 +17,13 @@
               xs6 
               v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
             >
-              <v-card color="blue-grey darken-2" class="white--text">
+              <v-card color="cyan lighten-5" class="dark--text" hover tile>
                 <v-card-title primary-title>
                   <div>
                     <div class="headline">{{ message.user_name }}</div>
                     <span>{{ message.text }}</span>
                   </div>
                 </v-card-title>
-                <v-card-actions>
-                  <v-btn flat dark>Listen now</v-btn>
-                </v-card-actions>
               </v-card>  
             </v-flex>
           </v-layout>
@@ -70,12 +68,15 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   .unsearched {
     display: none;
   }
   .message_content {
     margin: 50px;
     text-align: center;
+  }
+  #content {
+    margin-top: 130px;
   }
 </style>

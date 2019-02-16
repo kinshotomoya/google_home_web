@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from '../../javascript/app.vue'
 import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
 import store from '../packs/store.js'
+import 'vuetify/dist/vuetify.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  iconfont: 'fa'
+})
 
 // loadされると、以下のjsが発火する
 document.addEventListener('DOMContentLoaded', () => {
