@@ -1,34 +1,37 @@
 <template>
   <div id='content'>
-    <v-card>
-      <v-container
-        fluid
-        grid-list-lg
-      >
-        <v-layout
-            row wrap justify-center
-            v-for='message in messages'
-            v-bind:key='message.id'
+    <v-hover>
+      <v-card>
+        <v-container
+          fluid
+          grid-list-lg
         >
-          <v-flex
-            xs6 
-            v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
+          <v-layout
+              row wrap justify-center
+              v-for='message in messages'
+              v-bind:key='message.id'
+              class="mx-auto"
           >
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-card-title primary-title>
-                <div>
-                  <div class="headline">{{ message.user_name }}</div>
-                  <span>{{ message.text }}</span>
-                </div>
-              </v-card-title>
-              <v-card-actions>
-                <v-btn flat dark>Listen now</v-btn>
-              </v-card-actions>
-            </v-card>  
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-card>
+            <v-flex
+              xs6 
+              v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
+            >
+              <v-card color="blue-grey darken-2" class="white--text">
+                <v-card-title primary-title>
+                  <div>
+                    <div class="headline">{{ message.user_name }}</div>
+                    <span>{{ message.text }}</span>
+                  </div>
+                </v-card-title>
+                <v-card-actions>
+                  <v-btn flat dark>Listen now</v-btn>
+                </v-card-actions>
+              </v-card>  
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-hover>
   </div>
 </template>
 
@@ -51,6 +54,7 @@ export default {
   methods: {
     get_messages() {
       // TODO:async awaitで書き直す
+      // TODO: 取得したmessagesをstoreに登録する処理を書く
       axios.get('api/messages')
         .then(res => {
           console.log(res.data)

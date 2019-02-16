@@ -31,11 +31,10 @@ export default {
     searchMemberTalk() {
       name = this.searchQuery
       if (name === '') {  // inputに何も文字がない場合は、全部の会話を表示させる
-        this.$store.commit('changeSearchName', null)
+        this.$store.dispatch('doChangeSearchName', null)  // dispatchでstore.jsのactionsを実行する
       } else {
-        this.$store.commit('changeSearchName', this.searchQuery)
+        this.$store.dispatch('doChangeSearchName', this.searchQuery)
       }
-      console.log(this.$store.state.searchName)
     }
   },
   watch: {

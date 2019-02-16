@@ -8,9 +8,14 @@ const store = new Vuex.Store({
   state: {
     searchName: null
   },
-  mutations: {
-    changeSearchName(state, payload) {  // payloadは、commitからの引数
+  mutations: {  // methodsみたいなもの
+    setSearchName(state, payload) {  // payloadは、commitからの引数
       state.searchName = payload
+    }
+  },
+  actions: {  // 非同期で行いたいアクションを指定する。基本的にdispatchでアクションを指定する！！！
+    doChangeSearchName({ commit }, searchName) {
+      commit('setSearchName', searchName)
     }
   }
 })
