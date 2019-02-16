@@ -14,14 +14,15 @@
               class="mx-auto"
           >
             <v-flex
-              xs6 
+              xs8
               v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
             >
-              <v-card color="cyan lighten-5" class="dark--text" hover tile>
+              <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
                 <v-card-title primary-title>
                   <div>
-                    <div class="headline">{{ message.user_name }}</div>
-                    <span>{{ message.text }}</span>
+                    <span class="headline">{{ message.user_name }}</span>
+                    <span>{{ message.created_at }}</span>
+                    <div class='message_text'>{{ message.text }}</div>
                   </div>
                 </v-card-title>
               </v-card>  
@@ -43,7 +44,8 @@ export default {
   data() {
     return {
       messages: [],
-      searchQuery: ''
+      searchQuery: '',
+      colorName: ''
     }
   },
   created() {
@@ -63,6 +65,26 @@ export default {
   computed: {
     searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
       return this.$store.state.searchName
+    },
+    setCardColor: function(){  // computedでは引数を受け取ることができないので、このようなfunctionをreturnする書き方にする
+      return function(message) {
+        var colorName
+        var user_id = message.user_id
+        if(user_id === 1) {
+          colorName = 'cyan lighten-4'
+        } else if(user_id === 2) {
+          colorName = 'deep-orange lighten-4'
+        } else if(user_id === 3) {
+          colorName = 'purple lighten-4'
+        } else if(user_id === 4) {
+          colorName = 'pink lighten-4'
+        } else if(user_id === 5) {
+          colorName = 'teal lighten-4'
+        } else {
+          colorName = 'blue-grey lighten-4'
+        }
+        return colorName
+      }
     }
   },
 }
@@ -78,5 +100,11 @@ export default {
   }
   #content {
     margin-top: 130px;
+  }
+  .message_text {
+    margin: 30px 0;
+  }
+  .card {
+    font-size: 25px;
   }
 </style>

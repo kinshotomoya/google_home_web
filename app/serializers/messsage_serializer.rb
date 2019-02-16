@@ -1,5 +1,5 @@
 class MesssageSerializer < ActiveModel::Serializer
-  attributes :id, :text, :created_at, :user_name
+  attributes :id, :text, :created_at, :user_name, :user_id
 
   def user_name
     return nil if object.user.blank?

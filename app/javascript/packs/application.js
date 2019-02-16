@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 
 
 Vue.use(Vuetify, {
-  iconfont: 'fa'
+  iconfont: 'fa'  // fontawesomeを使うために指定
 })
 
 // loadされると、以下のjsが発火する

@@ -7,9 +7,7 @@
       color="blue darken-4"
       class='header_tool_bar'
     >
-      <v-icon
-        size='40px'
-      >fas fa-list</v-icon>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title class='toolbar-title'>みんなの会話</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
