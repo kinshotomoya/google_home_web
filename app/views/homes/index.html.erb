@@ -1,12 +1,4 @@
-<div id="header">
-  <header-template></header-template>
-</div>
-<div id='content'>
-  <input name='query' v-model='searchQuery' placeholder='Search talks by name'>
-  <content-template
-    v-for='message in messages'
-    v-bind:message-data='message'
-    v-bind:key='message.id'
-    v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
-  ></content-template>
+<div id='app'>
+  <%# application.jsで指定したcomponentsのケバブケースを指定する %>
+  <app></app>
 </div>
