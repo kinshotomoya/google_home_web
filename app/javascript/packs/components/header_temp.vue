@@ -17,11 +17,11 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       searchQuery: '',
-      searchName: null
     }
   },
   created: function () {
@@ -31,15 +31,15 @@ export default {
     searchMemberTalk() {
       name = this.searchQuery
       if (name === '') {  // inputに何も文字がない場合は、全部の会話を表示させる
-        this.searchName = null
+        this.$store.commit('changeSearchName', null)
       } else {
-        this.searchName = this.searchQuery
+        this.$store.commit('changeSearchName', this.searchQuery)
       }
+      console.log(this.$store.state.searchName)
     }
   },
   watch: {
     searchQuery: function () {
-      console.log(this.searchQuery)
       this.debouncedGetAnswer()
     }
   }

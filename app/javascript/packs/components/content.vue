@@ -42,7 +42,6 @@ export default {
   data() {
     return {
       messages: [],
-      searchName: null,
       searchQuery: ''
     }
   },
@@ -58,7 +57,12 @@ export default {
           this.messages = res.data
         })
     }
-  }
+  },
+  computed: {
+    searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
+      return this.$store.state.searchName
+    }
+  },
 }
 </script>
 
