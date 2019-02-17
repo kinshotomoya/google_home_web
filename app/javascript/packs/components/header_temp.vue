@@ -7,7 +7,16 @@
       color="blue darken-4"
       class='header_tool_bar'
     >
-      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <div class='left-side-bar'>
+        <v-menu transition='slide-x-transition'>
+          <v-toolbar-side-icon slot='activator'></v-toolbar-side-icon>
+          <v-list class='menu-list'>
+            <v-list-tile v-for="list in menuList" :key="list.id" @click="" class='list-item-wrapper'>
+              <v-list-tile-title v-text='list' class='menu-list-name'></v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </div>
       <v-toolbar-title class='toolbar-title'>みんなの会話</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
@@ -26,6 +35,7 @@ export default {
   data() {
     return {
       searchQuery: '',
+      menuList: this.$store.state.menuList
     }
   },
   created: function () {
@@ -60,5 +70,11 @@ export default {
   }
   .text-field {
     font-size: 25px;
+  }
+  .menu-list-name {
+    font-size: 30px;    
+  }
+  .list-item-wrapper {
+    margin: 30px 15px;
   }
 </style>

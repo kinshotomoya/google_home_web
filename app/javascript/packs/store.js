@@ -6,7 +6,12 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    searchName: null
+    searchName: null,
+    menuList: [
+      'ユーザー情報',
+      '会話一覧',
+      'お知らせ'
+    ]
   },
   mutations: {  // methodsみたいなもの
     setSearchName(state, payload) {  // payloadは、commitからの引数
