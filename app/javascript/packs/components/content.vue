@@ -11,22 +11,24 @@
               row wrap justify-center
               v-for='message in messages'
               v-bind:key='message.id'
-              class="mx-auto"
+              class="mx-auto each_message_wrapper"
           >
-            <v-flex
-              xs8
-              v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
-            >
-              <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
-                <v-card-title primary-title>
-                  <div>
-                    <span class="headline">{{ message.user_name }}</span>
-                    <span>{{ message.created_at }}</span>
-                    <div class='message_text'>{{ message.text }}</div>
-                  </div>
-                </v-card-title>
-              </v-card>  
-            </v-flex>
+            <transition>
+              <v-flex
+                xs8
+                v-show="matchSearchName(message)"
+              >
+                <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
+                  <v-card-title primary-title>
+                    <div>
+                      <span class="headline">{{ message.user_name }}</span>
+                      <span>{{ message.created_at }}</span>
+                      <div class='message_text'>{{ message.text }}</div>
+                    </div>
+                  </v-card-title>
+                </v-card>  
+              </v-flex>
+            </transition>
           </v-layout>
         </v-container>
       </v-card>
@@ -44,7 +46,6 @@ export default {
   data() {
     return {
       messages: [],
-      searchQuery: '',
       colorName: ''
     }
   },
@@ -64,9 +65,9 @@ export default {
     }
   },
   computed: {
-    searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
-      return this.$store.state.searchName
-    },
+    // searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
+    //   return this.$store.state.searchName
+    // },
     setCardColor: function(){  // computedでは引数を受け取ることができないので、このようなfunctionをreturnする書き方にする
       return function(message) {
         var colorName
@@ -86,18 +87,28 @@ export default {
         }
         return colorName
       }
+    },
+    matchSearchName: function() {  // searchNameと同じ名前のmesageがあればtrueを返す
+      return function(message) {
+        var searchName = this.$store.state.searchName
+        if (message.user_name.indexOf(searchName) != -1 || searchName === null) {
+          return true
+        } else {
+          return false
+        }
+      }
     }
   },
 }
 </script>
 
 <style lang="css" scoped>
-  .unsearched {
-    display: none;
-  }
   .message_content {
     margin: 50px;
     text-align: center;
+  }
+  .each_message_wrapper {
+    margin: 60px 0 !important;
   }
   #content {
     margin-top: 130px;
@@ -107,5 +118,16 @@ export default {
   }
   .card {
     font-size: 25px;
+  }
+  .v-enter-active, .v-leave-active {
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .v-enter{
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  .v-leave-to {
+    opacity: 0;
+    transform: translateX(10px);
   }
 </style>
