@@ -57,8 +57,9 @@ export default {
       // TODO: 取得したmessagesをstoreに登録する処理を書く
       axios.get('api/messages')
         .then(res => {
-          console.log(res.data)
-          this.messages = res.data
+          // console.log(res.data)
+          this.$store.dispatch('doAddMessages', res.data)
+          this.messages = this.$store.state.messages
         })
     }
   },
