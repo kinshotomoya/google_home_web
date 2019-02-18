@@ -15,7 +15,7 @@
           >
             <v-flex
               xs8
-              v-bind:class="(message.user_name.indexOf(searchName) != -1 || searchName === null) ? 'searched' : 'unsearched'"
+              v-show="matchSearchName(message)"
             >
               <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
                 <v-card-title primary-title>
@@ -44,7 +44,6 @@ export default {
   data() {
     return {
       messages: [],
-      searchQuery: '',
       colorName: ''
     }
   },
@@ -64,9 +63,9 @@ export default {
     }
   },
   computed: {
-    searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
-      return this.$store.state.searchName
-    },
+    // searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
+    //   return this.$store.state.searchName
+    // },
     setCardColor: function(){  // computedでは引数を受け取ることができないので、このようなfunctionをreturnする書き方にする
       return function(message) {
         var colorName
@@ -86,15 +85,22 @@ export default {
         }
         return colorName
       }
+    },
+    matchSearchName: function() {  // searchNameと同じ名前のmesageがあればtrueを返す
+      return function(message) {
+        var searchName = this.$store.state.searchName
+        if (message.user_name.indexOf(searchName) != -1 || searchName === null) {
+          return true
+        } else {
+          return false
+        }
+      }
     }
   },
 }
 </script>
 
 <style lang="css" scoped>
-  .unsearched {
-    display: none;
-  }
   .message_content {
     margin: 50px;
     text-align: center;
