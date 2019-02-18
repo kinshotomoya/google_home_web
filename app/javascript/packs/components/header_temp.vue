@@ -66,15 +66,22 @@ export default {
   .v-toolbar__content {
   }
   .toolbar-title {
-    font-size: 30px;
+    font-size: 20px;
   }
   .text-field {
-    font-size: 25px;
+    font-size: 12px;
   }
   .menu-list-name {
-    font-size: 30px;    
+    font-size: 20px;    
   }
   .list-item-wrapper {
     margin: 30px 15px;
+  }
+  .v-menu__content {
+    top: 47px !important;
+    left: 30px !important;
+  }
+  .v-input__slot {
+    margin-bottom: 0px !important;
   }
 </style>

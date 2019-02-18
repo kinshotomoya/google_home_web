@@ -22,8 +22,8 @@
                 <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
                   <v-card-title primary-title>
                     <div>
-                      <span class="headline">{{ message.user_name }}</span>
-                      <span>{{ message.created_at }}</span>
+                      <p>{{ message.created_at }}</p>
+                      <p class="headline">{{ message.user_name }}</p>
                       <div class='message_text'>{{ message.text }}</div>
                     </div>
                   </v-card-title>
@@ -109,7 +109,7 @@ export default {
     text-align: center;
   }
   .each_message_wrapper {
-    margin: 60px 0 !important;
+    margin: 30px 0 !important;
   }
   #content {
     margin-top: 130px;
@@ -118,7 +118,7 @@ export default {
     margin: 30px 0;
   }
   .card {
-    font-size: 25px;
+    font-size: 15px;
   }
   .v-enter-active, .v-leave-active {
     transition: opacity 0.5s, transform 0.5s;
