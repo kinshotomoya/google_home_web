@@ -7,16 +7,17 @@
           fluid
           grid-list-lg
         >
-          <v-layout
-              row wrap justify-center
-              v-for='message in messages'
-              v-bind:key='message.id'
-              class="mx-auto each_message_wrapper"
-          >
-            <transition>
+          <transition-group>
+            <v-layout
+                row wrap justify-center
+                v-for='message in messages'
+                v-bind:key='message.id'
+                class="mx-auto each_message_wrapper"
+                v-show="matchSearchName(message)"
+            >
+              
               <v-flex
                 xs8
-                v-show="matchSearchName(message)"
               >
                 <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
                   <v-card-title primary-title>
@@ -28,8 +29,8 @@
                   </v-card-title>
                 </v-card>  
               </v-flex>
-            </transition>
-          </v-layout>
+            </v-layout>
+          </transition-group>
         </v-container>
       </v-card>
     </v-hover>
