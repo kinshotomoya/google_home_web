@@ -11,22 +11,24 @@
               row wrap justify-center
               v-for='message in messages'
               v-bind:key='message.id'
-              class="mx-auto"
+              class="mx-auto each_message_wrapper"
           >
-            <v-flex
-              xs8
-              v-show="matchSearchName(message)"
-            >
-              <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
-                <v-card-title primary-title>
-                  <div>
-                    <span class="headline">{{ message.user_name }}</span>
-                    <span>{{ message.created_at }}</span>
-                    <div class='message_text'>{{ message.text }}</div>
-                  </div>
-                </v-card-title>
-              </v-card>  
-            </v-flex>
+            <transition>
+              <v-flex
+                xs8
+                v-show="matchSearchName(message)"
+              >
+                <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
+                  <v-card-title primary-title>
+                    <div>
+                      <span class="headline">{{ message.user_name }}</span>
+                      <span>{{ message.created_at }}</span>
+                      <div class='message_text'>{{ message.text }}</div>
+                    </div>
+                  </v-card-title>
+                </v-card>  
+              </v-flex>
+            </transition>
           </v-layout>
         </v-container>
       </v-card>
@@ -105,6 +107,9 @@ export default {
     margin: 50px;
     text-align: center;
   }
+  .each_message_wrapper {
+    margin: 60px 0 !important;
+  }
   #content {
     margin-top: 130px;
   }
@@ -113,5 +118,16 @@ export default {
   }
   .card {
     font-size: 25px;
+  }
+  .v-enter-active, .v-leave-active {
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .v-enter{
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  .v-leave-to {
+    opacity: 0;
+    transform: translateX(10px);
   }
 </style>
