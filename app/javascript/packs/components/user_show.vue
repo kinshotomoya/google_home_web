@@ -5,11 +5,9 @@
 </template>
 
 <script>
-// import router from '../../packs/router.js'  
-
-
 export default {
   beforeRouteEnter (to, from, next) {
+    console.log('user_showです')
     next(vm => {  //  これでvmでインスタンスにアクセスできる
       vm.$store.dispatch('doChangeHeaderTitle', 'ユーザー詳細')
     })
