@@ -29,7 +29,7 @@
           </v-list>
         </v-menu>
       </div>
-      <v-toolbar-title class='toolbar-title'>みんなの会話</v-toolbar-title>
+      <v-toolbar-title class='toolbar-title'>{{ Title }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
         placeholder="名前で検索"
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       searchQuery: '',
-      menuList: this.$store.state.menuList
+      menuList: this.$store.state.menuList,
     }
   },
   created: function () {
@@ -61,6 +61,11 @@ export default {
       } else {
         this.$store.dispatch('doChangeSearchName', this.searchQuery)
       }
+    }    
+  },
+  computed: {
+    Title() {  // beforeRouteEnterで、動的にTitleを変更する
+      return this.$store.state.headerTitle
     }
   },
   watch: {

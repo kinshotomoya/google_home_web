@@ -65,9 +65,6 @@ export default {
     }
   },
   computed: {
-    // searchName() {  // ローカルのsearchNameとstoreのsearchNameを同期する
-    //   return this.$store.state.searchName
-    // },
     setCardColor: function(){  // computedでは引数を受け取ることができないので、このようなfunctionをreturnする書き方にする
       return function(message) {
         var colorName
@@ -99,6 +96,11 @@ export default {
       }
     }
   },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {  //  これでvmでインスタンスにアクセスできる
+      vm.$store.dispatch('doChangeHeaderTitle', 'みんなの会話')
+    })
+  }
 }
 </script>
 
