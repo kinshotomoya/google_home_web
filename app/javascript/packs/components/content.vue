@@ -1,37 +1,23 @@
 <template>
   <div id='content'>
     <v-hover>
-      <v-card
-      >
-        <v-container
-          fluid
-          grid-list-lg
+      <v-timeline>
+        <v-timeline-item
+          v-for='message in messages'
+          :key='message.id'
+          large
+          class='timeline-item'
         >
-          <transition-group>
-            <v-layout
-                row wrap justify-center
-                v-for='message in messages'
-                v-bind:key='message.id'
-                class="mx-auto each_message_wrapper"
-                v-show="matchSearchName(message)"
-            >
-              <v-flex
-                xs8
-              >
-                <v-card v-bind:color="setCardColor(message)" class="dark--text card" hover tile>
-                  <v-card-title primary-title>
-                    <div>
-                      <p>{{ message.created_at }}</p>
-                      <p class="headline">{{ message.user_name }}</p>
-                      <div class='message_text'>{{ message.text }}</div>
-                    </div>
-                  </v-card-title>
-                </v-card>  
-              </v-flex>
-            </v-layout>
-          </transition-group>
-        </v-container>
-      </v-card>
+          <v-avatar slot="icon">
+            <img src="http://i.pravatar.cc/64">
+          </v-avatar>
+          <span slot="opposite">{{ message.user_name }}</span>
+          <v-card class="elevation-2">
+            <v-card-title class="headline">{{ message.created_at }}</v-card-title>
+            <v-card-text>{{ message.text }}</v-card-text>
+          </v-card>
+        </v-timeline-item>
+      </v-timeline>
     </v-hover>
   </div>
 </template>
@@ -131,5 +117,14 @@ export default {
   .v-leave-to {
     opacity: 0;
     transform: translateX(10px);
+  }
+  .elevation-2 {
+    font-size: 10px;
+  }
+  .headline {
+    font-size: 12px !important;
+  }
+  .v-timeline {
+    margin: 0 5px;
   }
 </style>
