@@ -2,7 +2,7 @@
 <template>
   <div id='app'>
     <HeaderTemp/>
-    <Content/>
+    <router-view />
   </div>
 </template>
 

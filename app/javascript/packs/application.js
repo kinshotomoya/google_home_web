@@ -3,6 +3,7 @@ import App from '../../javascript/app.vue'
 import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
 import store from '../packs/store.js'
+import router from './router.js'
 import 'vuetify/dist/vuetify.min.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     store,  // storeを登録。全てのコンポーネントからstoreにアクセスできるようになる
+    router,
     components: { App }
   })
 })

@@ -1,51 +1,61 @@
 {
-  "application.js": "/packs/js/application-fe477c3a766d482c5947.js",
-  "application.js.map": "/packs/js/application-fe477c3a766d482c5947.js.map",
-  "components/content.js": "/packs/js/components/content-de15968df34e8ac1521f.js",
-  "components/content.js.map": "/packs/js/components/content-de15968df34e8ac1521f.js.map",
-  "components/header_temp.js": "/packs/js/components/header_temp-107227685b5f280066d3.js",
-  "components/header_temp.js.map": "/packs/js/components/header_temp-107227685b5f280066d3.js.map",
-  "content_temp.js": "/packs/js/content_temp-bce366b54efef7c9674e.js",
-  "content_temp.js.map": "/packs/js/content_temp-bce366b54efef7c9674e.js.map",
+  "application.js": "/packs/js/application-370b675a7a53b2eb9202.js",
+  "application.js.map": "/packs/js/application-370b675a7a53b2eb9202.js.map",
+  "components/content.js": "/packs/js/components/content-4b101d87a32085589ddb.js",
+  "components/content.js.map": "/packs/js/components/content-4b101d87a32085589ddb.js.map",
+  "components/header_temp.js": "/packs/js/components/header_temp-8384ba199ee8e730cd08.js",
+  "components/header_temp.js.map": "/packs/js/components/header_temp-8384ba199ee8e730cd08.js.map",
+  "components/information.js": "/packs/js/components/information-109d62a3c09fa7aa7b42.js",
+  "components/information.js.map": "/packs/js/components/information-109d62a3c09fa7aa7b42.js.map",
+  "components/user_show.js": "/packs/js/components/user_show-3ab4620463a94e988aac.js",
+  "components/user_show.js.map": "/packs/js/components/user_show-3ab4620463a94e988aac.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-fe477c3a766d482c5947.js"
+        "/packs/js/application-370b675a7a53b2eb9202.js"
       ],
       "js.map": [
-        "/packs/js/application-fe477c3a766d482c5947.js.map"
+        "/packs/js/application-370b675a7a53b2eb9202.js.map"
       ]
     },
     "components/content": {
       "js": [
-        "/packs/js/components/content-de15968df34e8ac1521f.js"
+        "/packs/js/components/content-4b101d87a32085589ddb.js"
       ],
       "js.map": [
-        "/packs/js/components/content-de15968df34e8ac1521f.js.map"
+        "/packs/js/components/content-4b101d87a32085589ddb.js.map"
       ]
     },
     "components/header_temp": {
       "js": [
-        "/packs/js/components/header_temp-107227685b5f280066d3.js"
+        "/packs/js/components/header_temp-8384ba199ee8e730cd08.js"
       ],
       "js.map": [
-        "/packs/js/components/header_temp-107227685b5f280066d3.js.map"
+        "/packs/js/components/header_temp-8384ba199ee8e730cd08.js.map"
       ]
     },
-    "content_temp": {
+    "components/information": {
       "js": [
-        "/packs/js/content_temp-bce366b54efef7c9674e.js"
+        "/packs/js/components/information-109d62a3c09fa7aa7b42.js"
       ],
       "js.map": [
-        "/packs/js/content_temp-bce366b54efef7c9674e.js.map"
+        "/packs/js/components/information-109d62a3c09fa7aa7b42.js.map"
       ]
     },
-    "header_temp": {
+    "components/user_show": {
       "js": [
-        "/packs/js/header_temp-54cd4066dcba1aad7b31.js"
+        "/packs/js/components/user_show-3ab4620463a94e988aac.js"
       ],
       "js.map": [
-        "/packs/js/header_temp-54cd4066dcba1aad7b31.js.map"
+        "/packs/js/components/user_show-3ab4620463a94e988aac.js.map"
+      ]
+    },
+    "router": {
+      "js": [
+        "/packs/js/router-35bfc9f09e63dd5ce9a8.js"
+      ],
+      "js.map": [
+        "/packs/js/router-35bfc9f09e63dd5ce9a8.js.map"
       ]
     },
     "store": {
@@ -57,8 +67,6 @@
       ]
     }
   },
-  "header_temp.js": "/packs/js/header_temp-54cd4066dcba1aad7b31.js",
-  "header_temp.js.map": "/packs/js/header_temp-54cd4066dcba1aad7b31.js.map",
   "media/fa-brands-400.eot": "/packs/media/fa-brands-400-d9d17590.eot",
   "media/fa-brands-400.svg": "/packs/media/fa-brands-400-80533988.svg",
   "media/fa-brands-400.ttf": "/packs/media/fa-brands-400-c39278f7.ttf",
@@ -74,6 +82,8 @@
   "media/fa-solid-900.ttf": "/packs/media/fa-solid-900-b70cea03.ttf",
   "media/fa-solid-900.woff": "/packs/media/fa-solid-900-61969d43.woff",
   "media/fa-solid-900.woff2": "/packs/media/fa-solid-900-46280631.woff2",
+  "router.js": "/packs/js/router-35bfc9f09e63dd5ce9a8.js",
+  "router.js.map": "/packs/js/router-35bfc9f09e63dd5ce9a8.js.map",
   "store.js": "/packs/js/store-762e3b79f201f4339965.js",
   "store.js.map": "/packs/js/store-762e3b79f201f4339965.js.map"
 }

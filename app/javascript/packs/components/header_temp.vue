@@ -11,8 +11,20 @@
         <v-menu transition='slide-x-transition'>
           <v-toolbar-side-icon slot='activator'></v-toolbar-side-icon>
           <v-list class='menu-list'>
-            <v-list-tile v-for="list in menuList" :key="list.id" @click="" class='list-item-wrapper'>
-              <v-list-tile-title v-text='list' class='menu-list-name'></v-list-tile-title>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'user_show', params: { id: 1 } }">
+                <v-list-tile-title v-text='menuList[0]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
+            </v-list-tile>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'talk', params: { } }">
+                <v-list-tile-title v-text='menuList[1]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
+            </v-list-tile>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'info', params: { } }">
+                <v-list-tile-title v-text='menuList[2]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
             </v-list-tile>
           </v-list>
         </v-menu>

@@ -15,7 +15,6 @@
                 class="mx-auto each_message_wrapper"
                 v-show="matchSearchName(message)"
             >
-              
               <v-flex
                 xs8
               >
