@@ -11,13 +11,25 @@
         <v-menu transition='slide-x-transition'>
           <v-toolbar-side-icon slot='activator'></v-toolbar-side-icon>
           <v-list class='menu-list'>
-            <v-list-tile v-for="list in menuList" :key="list.id" @click="" class='list-item-wrapper'>
-              <v-list-tile-title v-text='list' class='menu-list-name'></v-list-tile-title>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'user_show', params: { id: 1 } }">
+                <v-list-tile-title v-text='menuList[0]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
+            </v-list-tile>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'talk', params: { } }">
+                <v-list-tile-title v-text='menuList[1]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
+            </v-list-tile>
+            <v-list-tile class='list-item-wrapper'>
+              <router-link :to="{ name: 'info', params: { } }">
+                <v-list-tile-title v-text='menuList[2]' class='menu-list-name'></v-list-tile-title>
+              </router-link>
             </v-list-tile>
           </v-list>
         </v-menu>
       </div>
-      <v-toolbar-title class='toolbar-title'>みんなの会話</v-toolbar-title>
+      <v-toolbar-title class='toolbar-title'>{{ Title }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
         placeholder="名前で検索"
@@ -35,7 +47,7 @@ export default {
   data() {
     return {
       searchQuery: '',
-      menuList: this.$store.state.menuList
+      menuList: this.$store.state.menuList,
     }
   },
   created: function () {
@@ -49,6 +61,11 @@ export default {
       } else {
         this.$store.dispatch('doChangeSearchName', this.searchQuery)
       }
+    }    
+  },
+  computed: {
+    Title() {  // beforeRouteEnterで、動的にTitleを変更する
+      return this.$store.state.headerTitle
     }
   },
   watch: {
