@@ -10,9 +10,9 @@
           v-show='matchSearchName(message)'
         >
           <v-avatar slot="icon">
-            <img src="http://i.pravatar.cc/64">
+            <img v-bind:src="selectUserIcon(message)">
           </v-avatar>
-          <span slot="opposite">{{ message.user_name }}</span>
+          <span slot="opposite">{{ message.user.name }}</span>
           <v-card class="elevation-2">
             <v-card-title class="headline">{{ message.created_at }}</v-card-title>
             <v-card-text>{{ message.text }}</v-card-text>
@@ -48,6 +48,7 @@ export default {
           // console.log(res.data)
           this.$store.dispatch('doAddMessages', res.data)
           this.messages = this.$store.state.messages
+          console.log(this.messages)
         })
     }
   },
@@ -75,7 +76,7 @@ export default {
     matchSearchName: function() {  // searchNameと同じ名前のmesageがあればtrueを返す
       return function(message) {
         var searchName = this.$store.state.searchName
-        if (message.user_name.indexOf(searchName) != -1 || searchName === null) {
+        if (message.user.name.indexOf(searchName) != -1 || searchName === null) {
           return true
         } else {
           return false
@@ -88,6 +89,25 @@ export default {
         return false
       } else {
         return true
+      }
+    },
+    selectUserIcon: function() {
+      return function(message) {
+        var userId = message.user.id
+        // 以下はハードコーディング
+        if (userId === 1) {
+          return 'tomo.jpg'
+        } else if (userId === 2) {
+          return 'mama.jpg'
+        } else if (userId === 3) {
+          return 'nana.jpg'
+        } else if (userId === 4) {
+          return 'iku.jpg'
+        } else if (userId === 5) {
+          return 'mimi.jpg'
+        } else {
+          return 'papa.jpg'
+        }
       }
     }
   },
