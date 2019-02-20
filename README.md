@@ -1,7 +1,7 @@
 # README
 
 ## 概要
-[LINE LIFF](https://developers.line.biz/ja/docs/liff/)で表示するwebを作成する。
+[LINE LIFF](https://developers.line.biz/ja/docs/liff/)で表示するSPAを作成。
 
 ## 技術
 - rails
