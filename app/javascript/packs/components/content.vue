@@ -1,12 +1,13 @@
 <template>
   <div id='content'>
     <v-hover>
-      <v-timeline>
+      <v-timeline v-show='timeLineWrapper'>
         <v-timeline-item
           v-for='message in messages'
           :key='message.id'
           large
           class='timeline-item'
+          v-show='matchSearchName(message)'
         >
           <v-avatar slot="icon">
             <img src="http://i.pravatar.cc/64">
@@ -79,6 +80,14 @@ export default {
         } else {
           return false
         }
+      }
+    },
+    timeLineWrapper: function() {
+      console.log(this.$store.state.messages)
+      if (this.$store.state.messages === null) {
+        return false
+      } else {
+        return true
       }
     }
   },
