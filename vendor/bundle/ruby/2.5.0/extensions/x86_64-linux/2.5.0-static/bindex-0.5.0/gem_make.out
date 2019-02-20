@@ -1,0 +1,15 @@
+current directory: /var/www/google_home_web/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/home/kinkin/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20190125-15237-lw7fdw.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/google_home_web/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /var/www/google_home_web/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: /var/www/google_home_web/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20190125-15237-127miek/bindex
