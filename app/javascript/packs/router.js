@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     { name: 'talk', path: '/', component: Content },
-    { name: 'user_show', path: '/users/:id', component: UserShow },  // idなどのパラメータがあるときは、nameを指定
+    { name: 'user_show', path: '/users/', component: UserShow },  // idなどのパラメータがあるときは、nameを指定
     { name: 'info', path: '/info', component:  Information}
   ]
 })

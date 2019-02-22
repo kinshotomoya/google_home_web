@@ -15,7 +15,9 @@ const store = new Vuex.Store({
     ],
     messages: null,
     headerTitle: 'みんなの会話',  // 初期値は「みんなの会話」にする
-    loading: false
+    loading: false,
+    lineLiffProfile: null,
+    userData: null
   },
   mutations: {  // methodsみたいなもの
     setSearchName(state, payload) {  // payloadは、commitからの引数
@@ -29,6 +31,12 @@ const store = new Vuex.Store({
     },
     setLoading(state, payload) {
       state.loading = payload
+    },
+    setlineLiffProfile(state, payload) {
+      state.lineLiffProfile = payload
+    },
+    setUserData(state, payload) {
+      state.userData = payload
     }
   },
   actions: {  // 非同期で行いたいアクションを指定する。基本的にdispatchでアクションを指定する！！！
@@ -43,6 +51,12 @@ const store = new Vuex.Store({
     },
     doChangeLoading({ commit }, bool) {
       commit('setLoading', bool)
+    },
+    doChangelineLiffProfile({ commit }, profile) {
+      commit('setlineLiffProfile', profile)
+    },
+    doChangeUserData({ commit }, userData) {
+      commit('setUserData', userData)
     }
   }
 })

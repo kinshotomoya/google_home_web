@@ -1,10 +1,7 @@
-class UsersController < ApplicationController
-  def index
-    @users = User.all
-  end
+class Api::UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
-    @messages = @user.messsages.order('created_at DESC')
+  def index
+    @user = User.find_by(line_id: params[:line_id])
+    render json: @user
   end
 end
