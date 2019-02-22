@@ -16,8 +16,8 @@ const store = new Vuex.Store({
     messages: null,
     headerTitle: 'みんなの会話',  // 初期値は「みんなの会話」にする
     loading: false,
-    lineLiffProfile: null,
-    userData: null
+    lineLiffProfile: null,  // LINE LIFFでログインした時に取得できるユーザーデータ
+    userData: null  // DBに保存されているユーザーデータ
   },
   mutations: {  // methodsみたいなもの
     setSearchName(state, payload) {  // payloadは、commitからの引数
