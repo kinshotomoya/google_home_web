@@ -12,7 +12,7 @@
           <v-toolbar-side-icon slot='activator'></v-toolbar-side-icon>
           <v-list class='menu-list'>
             <v-list-tile class='list-item-wrapper'>
-              <router-link :to="{ name: 'user_show', params: { id: 1 } }">
+              <router-link :to="{ name: 'user_show' }">
                 <v-list-tile-title v-text='menuList[0]' class='menu-list-name'></v-list-tile-title>
               </router-link>
             </v-list-tile>
@@ -52,6 +52,9 @@ export default {
   },
   created: function () {
     this.debouncedGetAnswer = _.debounce(this.searchMemberTalk, 500)
+    liff.init(
+      () => this.initialineLiff()
+    )
   },
   methods: {
     searchMemberTalk() {
@@ -61,18 +64,25 @@ export default {
       } else {
         this.$store.dispatch('doChangeSearchName', this.searchQuery)
       }
-    }    
+    },
+    initialineLiff: async function() {  // LINE LIFFの初期化を行う
+      const profile = await liff.getProfile();
+      this.$store.dispatch('doChangelineLiffProfile', profile) 
+    }
   },
   computed: {
     Title() {  // beforeRouteEnterで、動的にTitleを変更する
       return this.$store.state.headerTitle
-    }
+    },
   },
   watch: {
     searchQuery: function () {
       this.debouncedGetAnswer()
     }
-  }
+  },
+  // beforeRouteEnter () {
+  //   // ここでparamsを  
+  // }
 }
 </script>>
 

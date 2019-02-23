@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      messages: [],
+      messages: this.$store.state.messages,
       colorName: ''
     }
   },
@@ -40,16 +40,15 @@ export default {
     this.get_messages()
   },
   methods: {
-    get_messages() {
+    get_messages: async function() {
       // TODO:async awaitで書き直す
       // TODO: 取得したmessagesをstoreに登録する処理を書く
-      axios.get('api/messages')
-        .then(res => {
-          // console.log(res.data)
-          this.$store.dispatch('doAddMessages', res.data)
-          this.messages = this.$store.state.messages
-          console.log(this.messages)
-        })
+      if (this.$store.state.messages === null) {
+        const res = await axios.get('api/messages')
+        this.$store.dispatch('doAddMessages', res.data)
+        this.messages = this.$store.state.messages
+        console.log(this.messages)
+      }
     }
   },
   computed: {
